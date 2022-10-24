@@ -124,7 +124,7 @@ input.checkbox::before {
 } 
 
 input.checkbox:checked::before{
-    left: 20px;
+    left: 17px;
 }
 
 .location{
