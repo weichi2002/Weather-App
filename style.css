@@ -11,7 +11,7 @@ body {
     height: 100vh;
     margin: 0;
     background: #222;
-    background-image: url('https://source.unsplash.com/1600x900/?New York?Landscape');
+    background-image: url('https://source.unsplash.com/1600x900/?New%20York?Landscape');
     font-size: 120%;
 }
 
@@ -124,7 +124,7 @@ input.checkbox::before {
 } 
 
 input.checkbox:checked::before{
-    left: 20px;
+    left: 17px;
 }
 
 .location{
@@ -136,6 +136,10 @@ input.checkbox:checked::before{
     padding-right: 0.6em;
 }
 
+.temperature{
+    display: flex;
+    justify-content: space-around;
+}
 
 
 

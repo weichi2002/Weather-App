@@ -25,7 +25,7 @@ let weather ={
             .then((response)=> response.json())
             .then((data) => {
                 fetch(
-                    "http://api.openweathermap.org/geo/1.0/direct?q=" 
+                    "https://api.openweathermap.org/geo/1.0/direct?q=" 
                     + city 
                     + "&appid="
                     + this.apiKey   
@@ -41,7 +41,7 @@ let weather ={
         const {state} = data2[0];
         const{ name } = data;
         const {icon, description } = data.weather[0];
-        const { temp, humidity } = data.main;
+        const { temp, humidity, feels_like } = data.main;
         const { speed } = data.wind;
         console.log(state);
         console.log(name, icon, description, temp, humidity, speed);
@@ -54,6 +54,7 @@ let weather ={
         document.querySelector(".humidity").innerText ="Humidity: " + humidity + "%";
         document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
         document.querySelector(".description").innerText = description;
+        document.querySelector(".feels").innerText = "Feels Like: " + feels_like.toFixed(1) + (this.unit=="metric"? "°C": "°F");
 
         document.querySelector(".wind").innerText = "Windspeed: " + ((this.unit=="metric")? (speed* 18/5).toFixed(1) + " kmh": speed.toFixed(1) + " mph");
         document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?"  + name + "?Landscape')"
